@@ -46,7 +46,6 @@
 
       <!-- SEARCH -->
       <div class="relative z-50">
-
         <input
           v-model="searchQuery"
           placeholder="Search products..."
@@ -70,15 +69,31 @@
             <span>{{ product.title }}</span>
           </div>
         </div>
-
       </div>
 
-      <!-- DARK MODE -->
+      <!-- DARK MODE BUTTON (FIXED ICONS) -->
       <button
         @click="toggleDark"
         class="px-3 py-1 ml-3 bg-gray-200 rounded dark:bg-gray-700"
       >
-        {{ isDark ? 'Light' : 'Dark' }}
+
+        <!-- MOON (LIGHT MODE) -->
+        <svg v-if="!isDark" xmlns="http://www.w3.org/2000/svg"
+             class="w-5 h-5"
+             fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 12.79A9 9 0 1111.21 3
+                   7 7 0 0021 12.79z"/>
+        </svg>
+
+        <!-- SUN (DARK MODE) -->
+        <svg v-else xmlns="http://www.w3.org/2000/svg"
+             class="w-5 h-5"
+             fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M6.05 17.95l-1.414 1.414M18.364 18.364l-1.414-1.414M6.05 6.05 4.636 4.636M12 8a4 4 0 100 8 4 4 0 000-8z"/>
+        </svg>
+
       </button>
 
     </div>
@@ -86,9 +101,9 @@
     <!-- BEAUTY PREVIEW -->
     <div
       v-show="showBeautyPreview"
-      class="absolute top-full left-[30%] mt-2 w-[520px]
+      class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[520px]
              bg-white dark:bg-gray-800 text-black dark:text-white
-             rounded shadow-lg flex overflow-hidden"
+             rounded shadow-lg flex overflow-hidden z-50"
     >
       <div class="w-1/2 h-64">
         <img
@@ -106,9 +121,9 @@
     <!-- FRAGRANCE PREVIEW -->
     <div
       v-show="showFragrancePreview"
-      class="absolute top-full left-[45%] mt-2 w-[520px]
+      class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[520px]
              bg-white dark:bg-gray-800 text-black dark:text-white
-             rounded shadow-lg flex overflow-hidden"
+             rounded shadow-lg flex overflow-hidden z-50"
     >
       <div class="w-1/2 h-64">
         <img
@@ -152,7 +167,7 @@ const filteredProducts = computed(() => {
   )
 })
 
-function goToProduct(product:any) {
+function goToProduct(product: any) {
   router.push(`/product/${product.id}`)
   searchQuery.value = ''
 }

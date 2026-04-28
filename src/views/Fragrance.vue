@@ -1,11 +1,11 @@
 <template>
-  <div class="p-6">
+  <div class="min-h-screen p-6 text-black bg-gray-50 dark:bg-gray-800 dark:text-white">
 
-    <h1 class="text-2xl font-bold mb-6">
+    <h1 class="mb-6 text-2xl font-bold">
       Fragrance Products
     </h1>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
       <ProductCard
         v-for="p in fragranceProducts"

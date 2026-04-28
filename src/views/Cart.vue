@@ -1,5 +1,5 @@
 <template>
-  <div class="p-6">
+  <div class="min-h-screen p-6 text-black bg-gray-50 dark:bg-gray-800 dark:text-white">
 
     <h1 class="mb-6 text-2xl font-bold">
       Shopping Cart
@@ -11,7 +11,7 @@
       <div
         v-for="item in store.cart"
         :key="item.product.id"
-        class="flex items-center justify-between p-4 mb-3 bg-white rounded shadow"
+        class="flex items-center justify-between p-4 mb-3 bg-white rounded shadow dark:bg-gray-700"
       >
 
         <!-- PRODUCT INFO -->
@@ -21,7 +21,7 @@
             {{ item.product.title }}
           </h2>
 
-          <p class="text-gray-500">
+          <p class="text-gray-500 dark:text-gray-300">
             ${{ item.product.price }}
           </p>
 
@@ -29,7 +29,7 @@
           <div class="flex items-center gap-2 mt-2">
 
             <button
-              class="px-2 bg-gray-300 rounded"
+              class="px-2 bg-gray-300 rounded dark:bg-gray-600"
               @click="store.decreaseQuantity(item.product.id)"
             >
               -
@@ -40,7 +40,7 @@
             </span>
 
             <button
-              class="px-2 bg-gray-300 rounded"
+              class="px-2 bg-gray-300 rounded dark:bg-gray-600"
               @click="store.addToCart(item.product)"
             >
               +
@@ -61,7 +61,7 @@
       </div>
 
       <!-- TOTAL PRICE -->
-      <div class="p-4 mt-6 bg-gray-100 rounded shadow">
+      <div class="p-4 mt-6 bg-gray-100 rounded shadow dark:bg-gray-900">
 
         <h2 class="text-xl font-bold">
           Total Price: {{ totalPrice }}
@@ -72,7 +72,7 @@
     </div>
 
     <!-- EMPTY CART -->
-    <p v-else class="text-gray-500">
+    <p v-else class="text-gray-500 dark:text-gray-300">
       Cart is empty
     </p>
 
@@ -85,13 +85,11 @@ import { productsStore } from '@/stores/products'
 
 const store = productsStore()
 
-// ✅ FIXED TOTAL PRICE (no floating point issue)
 const totalPrice = computed(() => {
   const total = store.cart.reduce((sum, item) => {
     return sum + item.product.price * item.quantity
   }, 0)
 
-  // clean output
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD'
