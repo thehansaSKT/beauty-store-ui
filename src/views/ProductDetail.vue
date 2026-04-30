@@ -1,39 +1,51 @@
 <template>
-  <div v-if="product" class="p-6 max-w-5xl mx-auto flex flex-col md:flex-row gap-8">
+  <div
+    v-if="product"
+    class="min-h-screen p-6 text-black bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-900 dark:to-black dark:text-white"
+  >
+
+    <div
+      class="flex flex-col max-w-5xl gap-8 p-6 mx-auto bg-white shadow-lg md:flex-row dark:bg-gray-800 rounded-2xl"
+    >
+
+      <img
+        :src="product.thumbnail"
+        class="w-full rounded-lg shadow md:w-1/2"
+      />
 
     
-    <img
-      :src="product.thumbnail"
-      class="w-full md:w-1/2 rounded-lg shadow"
-    />
+      <div class="flex flex-col justify-center">
 
-   
-    <div class="flex flex-col justify-center">
+        <h1 class="text-3xl font-bold">
+          {{ product.title }}
+        </h1>
 
-      <h1 class="text-3xl font-bold">
-        {{ product.title }}
-      </h1>
+        <p class="mt-4 text-gray-600 dark:text-gray-300">
+          {{ product.description }}
+        </p>
 
-      <p class="mt-4 text-gray-600">
-        {{ product.description }}
-      </p>
+        <p class="mt-6 text-2xl font-bold">
+          ${{ product.price }}
+        </p>
 
-      <p class="mt-6 text-2xl font-bold">
-        ${{ product.price }}
-      </p>
+        <button
+          @click="addToCart"
+          class="px-6 py-3 mt-6 text-white bg-black rounded hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-300"
+        >
+          Add to Cart
+        </button>
 
-      <button
-        @click="addToCart"
-        class="mt-6 bg-black text-white px-6 py-3 rounded hover:bg-gray-800"
-      >
-        Add to Cart
-      </button>
+      </div>
 
     </div>
 
   </div>
 
-  <p v-else class="p-6 text-center">
+
+  <p
+    v-else
+    class="min-h-screen p-6 text-center text-black bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-900 dark:to-black dark:text-white"
+  >
     Loading product...
   </p>
 </template>
