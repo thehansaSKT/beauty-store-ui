@@ -1,7 +1,7 @@
 <template>
   <nav class="relative flex items-center justify-between px-10 py-4 text-black bg-white dark:bg-gray-900 dark:text-white">
 
-    <h1 class="text-xl font-bold">Thisa</h1>
+    <h1 class="text-xl italic font-semibold">Thisa</h1>
 
     <div class="relative flex items-center justify-center flex-1 gap-10">
 
