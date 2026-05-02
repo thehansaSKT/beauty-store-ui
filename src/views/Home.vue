@@ -43,7 +43,6 @@ import ProductCard from '@/components/ProductCard.vue'
 
 const store = productsStore()
 
-// ✅ FIX: always ensure data loads
 onMounted(async () => {
   await store.fetchProducts()
 })

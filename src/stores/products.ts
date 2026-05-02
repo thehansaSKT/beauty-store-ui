@@ -15,7 +15,6 @@ export const productsStore = defineStore('products', {
 
   actions: {
 
-    // ✅ FETCH ONLY BEAUTY + FRAGRANCE PRODUCTS
     async fetchProducts() {
       try {
         this.loading = true
@@ -23,7 +22,6 @@ export const productsStore = defineStore('products', {
         const res = await fetch('https://dummyjson.com/products')
         const data = await res.json()
 
-        // 🔥 FILTER HERE
         this.products = data.products.filter((p: any) =>
           p.category === 'beauty' ||
           p.category === 'fragrances'
@@ -36,7 +34,6 @@ export const productsStore = defineStore('products', {
       }
     },
 
-    // ➕ ADD TO CART
     addToCart(product: Product) {
       const item = this.cart.find(i => i.product.id === product.id)
 
@@ -50,7 +47,6 @@ export const productsStore = defineStore('products', {
       }
     },
 
-    // ➖ DECREASE
     decreaseQuantity(productId: number) {
       const item = this.cart.find(i => i.product.id === productId)
 
@@ -63,7 +59,6 @@ export const productsStore = defineStore('products', {
       }
     },
 
-    // ❌ REMOVE
     removeFromCart(productId: number) {
       this.cart = this.cart.filter(i => i.product.id !== productId)
     }
@@ -71,7 +66,6 @@ export const productsStore = defineStore('products', {
   },
 
   getters: {
-    // ✅ TOTAL CART COUNT
     cartCount: (state) =>
       state.cart.reduce((sum, item) => sum + item.quantity, 0)
   }

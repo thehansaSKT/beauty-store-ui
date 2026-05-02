@@ -5,7 +5,6 @@
       Shopping Cart
     </h1>
 
-    <!-- CART ITEMS -->
     <div v-if="store.cart.length">
 
       <div
@@ -14,7 +13,6 @@
         class="flex items-center justify-between p-4 mb-3 bg-white rounded shadow dark:bg-gray-700"
       >
 
-        <!-- PRODUCT INFO -->
         <div>
 
           <h2 class="font-semibold">
@@ -25,7 +23,6 @@
             ${{ item.product.price }}
           </p>
 
-          <!-- QUANTITY CONTROL -->
           <div class="flex items-center gap-2 mt-2">
 
             <button
@@ -50,7 +47,6 @@
 
         </div>
 
-        <!-- REMOVE BUTTON -->
         <button
           class="px-3 py-1 text-white bg-red-500 rounded"
           @click="store.removeFromCart(item.product.id)"
@@ -60,7 +56,6 @@
 
       </div>
 
-      <!-- TOTAL PRICE -->
       <div class="p-4 mt-6 bg-gray-100 rounded shadow dark:bg-gray-900">
 
         <h2 class="text-xl font-bold">
@@ -71,7 +66,6 @@
 
     </div>
 
-    <!-- EMPTY CART -->
     <p v-else class="text-gray-500 dark:text-gray-300">
       Cart is empty
     </p>

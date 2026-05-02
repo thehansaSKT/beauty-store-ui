@@ -1,25 +1,24 @@
 <template>
   <div
-    class="bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden cursor-pointer"
+    class="overflow-hidden transition bg-white shadow-sm cursor-pointer rounded-xl hover:shadow-md"
     @click="goToDetail"
   >
-
-    <!-- IMAGE -->
-    <div class="w-full h-48 bg-gray-100 flex items-center justify-center">
+   
+    <div class="flex items-center justify-center w-full h-48 bg-gray-100">
       <img
         :src="product.thumbnail"
-        class="h-full object-contain p-4"
+        class="object-contain h-full p-4"
       />
     </div>
 
     <!-- CONTENT -->
     <div class="p-4">
 
-      <h2 class="text-sm font-semibold line-clamp-2 h-10">
+      <h2 class="h-10 text-sm font-semibold line-clamp-2">
         {{ product.title }}
       </h2>
 
-      <p class="text-lg font-bold mt-2 text-black">
+      <p class="mt-2 text-lg font-bold text-black">
         ${{ product.price }}
       </p>
 
