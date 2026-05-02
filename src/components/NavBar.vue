@@ -224,6 +224,7 @@
 import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { productsStore } from '@/stores/products'
+import type { Product } from '@/types/product'
 
 import img1 from "../../Images/cosmetic.avif"
 import img2 from "../../Images/perfume.webp"
@@ -261,8 +262,7 @@ const filteredProducts = computed(() => {
   )
 
 })
-
-function goToProduct(product: any) {
+function goToProduct(product: Product) {
 
   router.push(`/product/${product.id}`)
 
