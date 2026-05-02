@@ -167,7 +167,7 @@
       <div class="w-1/2 h-64">
 
         <img
-          src="C:\Users\ASUS\Desktop\html\Women\Thisa\cosmetic.avif"
+           :src="img1"
           class="object-cover w-full h-full"
         />
 
@@ -197,7 +197,7 @@
       <div class="w-1/2 h-64">
 
         <img
-          src="C:\Users\ASUS\Desktop\html\Women\Thisa\perfume.webp"
+           :src="img2"
           class="object-cover w-full h-full"
         />
 
@@ -224,6 +224,9 @@
 import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { productsStore } from '@/stores/products'
+
+import img1 from "../../Images/cosmetic.avif"
+import img2 from "../../Images/perfume.webp"
 
 const store = productsStore()
 const router = useRouter()

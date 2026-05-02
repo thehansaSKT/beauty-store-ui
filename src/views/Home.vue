@@ -6,8 +6,9 @@
       <div class="relative mb-10 overflow-hidden shadow rounded-xl">
 
         <img
-          src="C:\Users\ASUS\Desktop\html\Women\Thisa\home.jpg"
+          :src="homeImage"
           class="object-cover w-full h-64 md:h-80"
+          alt="Beauty banner"
         />
 
         <div class="absolute inset-0 flex flex-col items-center justify-center text-white bg-black bg-opacity-40">
@@ -40,6 +41,8 @@
 import { computed, onMounted } from 'vue'
 import { productsStore } from '@/stores/products'
 import ProductCard from '@/components/ProductCard.vue'
+
+import homeImage from "../../Images/home.jpg"
 
 const store = productsStore()
 
