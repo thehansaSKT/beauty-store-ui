@@ -247,10 +247,13 @@
 
       <button
         @click="toggleDark"
-        class="px-3 py-1 bg-gray-200 rounded w-fit dark:bg-gray-700"
-      >
-        Dark Mode
-      </button>
+        class="flex items-center gap-2 px-3 py-1 bg-gray-200 rounded w-fit dark:bg-gray-700"
+>
+  <span>
+    {{ isDark ? 'Light Mode' : 'Dark Mode' }}
+  </span>
+
+</button>
 
     </div>
 
