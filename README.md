@@ -1,42 +1,85 @@
-# Thisa
+# Beauty Store UI 
 
-This template should help get you started developing with Vue 3 in Vite.
+## Project Overview
+This is a third semester GUI project developed using Vue.js and Vite.  
+The application is a simple e-commerce frontend for beauty and fragrance products.
 
-## Recommended IDE Setup
+Users can browse products, search items, add products to the cart, and switch between dark and light mode. The application is fully responsive for mobile, tablet, and desktop devices.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+---
 
-## Recommended Browser Setup
+## Features
+- Product listing (Beauty & Fragrance categories)
+- Product search functionality
+- Shopping cart system
+- Cart persistence using localStorage
+- Dark / Light mode toggle
+- Responsive design (Mobile, Tablet, Desktop)
+- Mobile hamburger navigation menu
+- Login / Logout UI
+- Dynamic product preview in navbar
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+---
 
-## Type Support for `.vue` Imports in TS
+## Technologies Used
+- Vue.js
+- Vite
+- Pinia
+- Vue Router
+- TypeScript
+- Tailwind CSS
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+---
 
-## Customize configuration
+## Responsive Design
+The project is fully responsive using Tailwind CSS Flex and Grid classes.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- **Mobile:** Hamburger menu and stacked layout
+- **Tablet:** Flexible responsive layout
+- **Desktop:** Full navigation and multi-column layout
 
-## Project Setup
+---
 
-```sh
+# Installation & Setup Instructions
+
+## 1. Install Dependencies
+Run the following command to install all required packages:
+
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+---
 
-```sh
+## 2. Run the Development Server
+Start the project locally using:
+
+```bash
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+---
 
-```sh
+## 3. Open the Application
+After running the server, open the following URL in your browser:
+
+```txt
+http://localhost:5173
+```
+
+---
+
+## 4. Build for Production
+To create a production build, run:
+
+```bash
 npm run build
 ```
+
+---
+
+## Notes
+- This project uses localStorage for cart persistence.
+- This is a frontend-only GUI project.
+- Product data is fetched from:
+  https://dummyjson.com/products
